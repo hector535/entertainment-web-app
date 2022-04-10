@@ -74,7 +74,7 @@ const GenericListItem = (props) => {
     }
 
     imageURL = imageURL.substring(8);
-    liStyle.backgroundImage = `url(${imageURL})`;
+    liStyle.backgroundImage = `url(${process.env.PUBLIC_URL}/${imageURL})`;
     titleClass = classes["title--trending"];
     insideContent = (
       <div className={informationClass}>
@@ -91,7 +91,7 @@ const GenericListItem = (props) => {
       imageURL = thumbnail.regular.large;
     }
     imageURL = imageURL.substring(8);
-    liStyle.backgroundImage = `url(${imageURL})`;
+    liStyle.backgroundImage = `url(${process.env.PUBLIC_URL}/${imageURL})`;
     titleClass = classes["title"];
     outsideContent = (
       <div className={informationClass}>
