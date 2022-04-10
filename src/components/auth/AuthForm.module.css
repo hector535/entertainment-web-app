@@ -1,0 +1,106 @@
+.auth {
+  width: 100%;
+  padding: 1.8461em;
+  background-color: var(--clr-semi-dark-blue);
+  border-radius: 10px;
+  max-width: 20.4375rem;
+}
+
+.auth h1 {
+  color: var(--clr-white);
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.03125rem;
+  margin-bottom: 2.5rem;
+}
+
+form input {
+  padding: 1.13em 1.2307em;
+  padding-top: 0;
+  background-color: transparent;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-bottom: 1px var(--clr-gry-blue) solid;
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.9375rem;
+  line-height: 1.1875rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+.invalid {
+  border-bottom: 1px var(--clr-red) solid;
+}
+
+form input:focus {
+  outline: none;
+  border-bottom: 1px var(--clr-white) solid;
+  caret-color: var(--clr-red);
+}
+
+form > p {
+  color: var(--clr-red);
+  font-weight: 300;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  text-align: center;
+  color: var(--clr-white);
+  font-weight: 300;
+  font-size: 0.9375rem;
+  line-height: 1.1875rem;
+  margin-top: 1rem;
+}
+
+.submit,
+.toggle {
+  padding: 1em 4.53em;
+  padding-top: 0.93em;
+  background-color: var(--clr-red);
+  font-family: inherit;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-semi-dark-blue);
+}
+
+.actions p {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.actions .toggle {
+  color: var(--clr-red);
+  background-color: transparent;
+  display: inline-block;
+
+  padding: 0;
+  margin: 0;
+
+  margin-left: 0.5625rem;
+}
+
+@media (min-width: 48rem) {
+  .auth {
+    padding: 2.13em;
+    max-width: 25rem;
+  }
+
+  .actions p {
+    margin-bottom: 0;
+  }
+}

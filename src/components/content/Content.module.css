@@ -1,0 +1,19 @@
+.title {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5625rem;
+  letter-spacing: -0.01953125rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .title {
+    color: #fff;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.03125rem;
+    margin-bottom: 1.5625rem;
+  }
+}

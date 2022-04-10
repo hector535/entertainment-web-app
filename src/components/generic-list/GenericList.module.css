@@ -1,0 +1,32 @@
+.list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.list--white-space {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.list--white-space li {
+  margin-right: 1rem;
+}
+
+.list--white-space li:last-child {
+  margin-right: 0;
+}
+
+.list--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(164px, 1fr));
+  grid-auto-rows: 110px;
+  column-gap: 0.9375rem;
+  row-gap: 4.5rem;
+}
+
+@media (min-width: 48rem) {
+  .list--grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: 140px;
+  }
+}

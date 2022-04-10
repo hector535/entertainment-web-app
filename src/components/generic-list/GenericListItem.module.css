@@ -1,0 +1,142 @@
+:root {
+  --padding-item: 0.6153em;
+}
+
+.item {
+  display: inline-block;
+
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--clr-gray);
+  padding: var(--padding-item);
+  cursor: pointer;
+  position: relative;
+}
+
+.item:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.item:hover .play {
+  display: flex;
+}
+
+.item--trending {
+  width: 240px;
+  height: 140px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.information {
+  align-self: flex-end;
+}
+
+.information--outside {
+  flex: 0;
+  align-self: stretch;
+  margin-left: calc(var(--padding-item) * -1);
+  margin-top: 1.2rem;
+}
+
+.title--trending {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.1875rem;
+  color: var(--clr-white);
+  align-self: flex-end;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  color: var(--clr-white);
+  align-self: flex-end;
+}
+
+.bookmark-container {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.bookmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  line-height: 0;
+  border-radius: 50%;
+
+  background: var(--clr-dark-blue);
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.bookmark:hover {
+  cursor: pointer;
+  background: var(--clr-white);
+}
+
+.bookmark:hover * {
+  stroke: var(--clr-dark-blue);
+}
+
+.bookmark--fill * {
+  fill: var(--clr-white);
+}
+
+.play {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 0.6em 1.2em;
+  border-radius: 28.5px;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 117px;
+}
+
+.play p {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+  /* margin-left: 1.1875rem; */
+  color: var(--clr-white);
+}
+
+@media (min-width: 48rem) {
+  .title--trending {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
+  }
+
+  .item--trending {
+    width: 470px;
+    height: 230px;
+  }
+}

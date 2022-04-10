@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Layout from "./components/layout/Layout";
+import AuthPage from "./components/pages/AuthPage";
+import HomePage from "./components/pages/HomePage";
+import MoviesPage from "./components/pages/MoviesPage";
+import SeriesPage from "./components/pages/SeriesPage";
+import BookmarksPage from "./components/pages/BookmarksPage";
+import "./App.css";
 
 function App() {
+  const { isLoggedIn } = useSelector((state) => state.auth);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {!isLoggedIn && (
+        <Fragment>
+          <Route path="/auth">
+            <AuthPage />
+          </Route>
+          <Route path="*">
+            <Redirect to="/auth" />
+          </Route>
+        </Fragment>
+      )}
+      {isLoggedIn && (
+        <Layout>
+          <Switch>
+            <Route path="/home">
+              <HomePage />
+            </Route>
+            <Route path="/movies">
+              <MoviesPage />
+            </Route>
+            <Route path="/series">
+              <SeriesPage />
+            </Route>
+            <Route path="/bookmarks">
+              <BookmarksPage />
+            </Route>
+            <Route path="/" exact>
+              <Redirect to="/home" />
+            </Route>
+            <Route path="*">
+              <Redirect to="/home" />
+            </Route>
+          </Switch>
+        </Layout>
+      )}
+    </Fragment>
   );
 }
 
